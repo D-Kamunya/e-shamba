@@ -54,4 +54,17 @@ class Crop(models.Model):
     upload_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.name        
+        return self.name
+
+
+
+class Crop_prd(models.Model):
+    """
+    Crop_prd class to define Products used on specific crop Objects
+    """
+    crop= models.ForeignKey(Crop, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    save_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.id                
