@@ -4,6 +4,8 @@ from pyuploadcare.dj.models import ImageField
 import datetime as dt
 from django.db.models.signals import post_save
 from django.dispatch import receiver
+from .email import send_welcome_email
+
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
