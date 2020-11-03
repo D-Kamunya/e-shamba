@@ -67,4 +67,21 @@ class Crop_prd(models.Model):
     save_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id                
+        return self.id  
+
+
+
+class Post(models.Model):
+    """
+    Post class to define post Objects
+    """
+    name = models.CharField(max_length =150)
+    details = models.TextField()
+    user = models.ForeignKey(User,
+    on_delete=models.CASCADE)
+    post_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.name 
+
+
