@@ -97,3 +97,15 @@ class Post_Comment(models.Model):
       return self.id         
 
 
+
+class Crop_activity(models.Model):
+    """
+    Crop_activity class to define specific crop activities Objects
+    """
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
+    activity = models.TextField()
+    activity_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.id   
+
