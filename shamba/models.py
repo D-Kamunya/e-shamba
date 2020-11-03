@@ -27,3 +27,16 @@ class Product(models.Model):
     def __str__(self):
         return self.name 
 
+
+
+class Prod_rec(models.Model):
+    """
+    Prod_rec class to define Product product recommendations Objects
+    """
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, on_delete=models.CASCADE)
+    rec_crops = models.CharField(max_length =150)
+    upload_date = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.id
