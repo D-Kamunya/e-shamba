@@ -107,5 +107,20 @@ class Crop_activity(models.Model):
     activity_date = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
-        return self.id   
+        return self.id
+
+
+
+class Schedule(models.Model): 
+    """
+    Schedule class to define scheduled activities Objects
+    """
+    user = models.ForeignKey(User,  on_delete=models.CASCADE)
+    crop = models.ForeignKey(Crop, on_delete=models.CASCADE)
+    name = models.CharField(max_length =150)
+    details = models.TextField()
+    schedule_date = models.DateTimeField()
+
+    def __str__(self):
+        return self.id
 
