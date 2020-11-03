@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'shamba.apps.ShambaConfig',
     'rest_framework',
-    'users'
+    'users',
+    'pyuploadcare.dj',
 ]
 
 MIDDLEWARE = [
@@ -59,7 +60,7 @@ ROOT_URLCONF = 'eshamba.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -71,7 +72,10 @@ TEMPLATES = [
         },
     },
 ]
-
+UPLOADCARE = {
+    'pub_key': config("PUB_KEY"),
+    'secret': config("SECRET"),
+}
 WSGI_APPLICATION = 'eshamba.wsgi.application'
 
 
