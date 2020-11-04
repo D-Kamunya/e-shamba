@@ -29,26 +29,20 @@ class ScheduleUpdateApi(generics.RetrieveUpdateDestroyAPIView):
 
 # Crop List API
 class CropApi(generics.ListCreateAPIView):
-    permission_classes = [
-        permissions.IsAuthenticated,
-    ]
+    
     queryset = Crop.objects.all()
     serializer_class = CropSerializer
 
 
 class CropDetailApi(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = [
-        permissions.IsAuthenticated,
-    ]
+    
     queryset = Crop.objects.all()
     serializer_class = CropSerializer
 
 
 
 class UsersCropListApi(generics.ListAPIView):
-    permission_classes = [
-        permissions.IsAuthenticated,
-    ]
+    
     serializer_class = CropSerializer
 
     def get_queryset(self):

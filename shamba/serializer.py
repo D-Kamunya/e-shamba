@@ -25,7 +25,8 @@ class CropSerializer(serializers.ModelSerializer):
   
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Post  
+        model = Post 
+        fields = '__all__' 
   
 
 class ProductSerializer(serializers.ModelSerializer):
