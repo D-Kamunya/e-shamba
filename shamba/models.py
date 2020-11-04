@@ -122,6 +122,15 @@ class Schedule(models.Model):
     details = models.TextField()
     schedule_date = models.DateTimeField()
 
+
+   
+
     def __str__(self):
         return self.id
 
+
+    
+
+   
+
+  

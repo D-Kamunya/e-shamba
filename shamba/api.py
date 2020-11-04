@@ -21,3 +21,5 @@ class ScheduleUpdateApi(generics.RetrieveUpdateAPIView):
 class ScheduleDeleteApi(generics.DestroyAPIView):
    queryset = Schedule.objects.all()
    serializer_class = ScheduleSerializer
+
+
