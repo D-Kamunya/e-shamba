@@ -11,3 +11,4 @@ admin.site.register(Post)
 admin.site.register(Post_Comment)
 admin.site.register(Crop_activity)
 admin.site.register(Schedule) 
+

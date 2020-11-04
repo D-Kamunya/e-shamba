@@ -23,4 +23,3 @@ urlpatterns = [
     path('api/token/refresh/', jwt_views.TokenRefreshView.as_view(), name='token_refresh'),
     path('account/', include('users.urls')),
     path('shamba/', include('shamba.urls'))
-]
