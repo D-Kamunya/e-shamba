@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import Product,Prod_rec,Crop,Crop_prd,Post,Post_Comment,Crop_activity,Schedule
 # Register your models here.
+
 admin.site.register(Product)
 admin.site.register(Prod_rec)
 admin.site.register(Crop)

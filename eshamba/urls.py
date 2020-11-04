@@ -24,3 +24,4 @@ urlpatterns = [
     path('account/', include('users.urls')),
     path('shamba/', include('shamba.urls')),
 ]
+
