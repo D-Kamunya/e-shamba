@@ -5,6 +5,9 @@ from .models import Crop
 
 from .serializer import ScheduleSerializer
 from .models import Schedule
+
+from .serializer import PostSerializer
+from .models import Post
 # schedule Create API
 
 class ScheduleAPI(generics.ListAPIView):
@@ -68,5 +71,27 @@ class UsersCropListApi(generics.ListAPIView):
         userid = self.request.query_params.get('userid', None)
         if userid is not None:
             queryset = queryset.filter(user_id=userid)
-        return queryset   
+        return queryset 
+      
+      
+# Post Create API
+class PostCreateApi(generics.CreateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+# Post List API
+class PostListApi(generics.ListAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+# Post Update API
+class PostUpdateApi(generics.RetrieveUpdateAPIView):
+    queryset = Post.objects.all()
+    serializer_class = PostSerializer
+# Post Delete API
+class PostDeleteApi(generics.DestroyAPIView):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
+# Post Details API
+class PostDetailsApi(generics.DestroyAPIView):
+   queryset = Post.objects.all()
+   serializer_class = PostSerializer
 

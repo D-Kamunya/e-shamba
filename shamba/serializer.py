@@ -1,6 +1,7 @@
 from rest_framework import  serializers
 from .models import Schedule
 from .models import Crop
+from .models import Post
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -20,4 +21,12 @@ class CropSerializer(serializers.ModelSerializer):
     class Meta:
         model = Crop
         fields = '__all__'
+  
+class PostSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Post  
+  
+  
+  
+  
 
