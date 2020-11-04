@@ -2,11 +2,10 @@ from .models import Post
 from rest_framework import generics
 from rest_framework.response import Response
 from .serializer import PostSerializer
-from .models import Employees
 
-createPost, PostDetails, PostList, UpdatePost, DeletePost
+
 # Post Create API
-class CreatePostApi(generics.CreateAPIView):
+class PostCreateApi(generics.CreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 # Post List API
