@@ -14,36 +14,21 @@ from .models import Product
 from .serializer import ProductSerializer
 # schedule Create API
 
-class ScheduleAPI(generics.ListAPIView):
+class ScheduleAPI(generics.ListCreateAPIView):
     queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
 
-class ScheduleCreateApi(generics.CreateAPIView):
-    queryset = Schedule.objects.all()
-    serializer_class = ScheduleSerializer
-# schedule List API
+
 
 # schedule Update API
-class ScheduleUpdateApi(generics.RetrieveUpdateAPIView):
+class ScheduleUpdateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
-# Schedule Delete API
-class ScheduleDeleteApi(generics.DestroyAPIView):
-   queryset = Schedule.objects.all()
-   serializer_class = ScheduleSerializer
 
-
-# Crop Create API
-class CropCreateApi(generics.CreateAPIView):
-    permission_classes = [
-        permissions.IsAuthenticated,
-    ]
-    queryset = Crop.objects.all()
-    serializer_class = CropSerializer
 
 
 # Crop List API
-class CropApi(generics.ListAPIView):
+class CropApi(generics.ListCreateAPIView):
     permission_classes = [
         permissions.IsAuthenticated,
     ]
@@ -78,26 +63,15 @@ class UsersCropListApi(generics.ListAPIView):
         return queryset 
       
       
-# Post Create API
-class PostCreateApi(generics.CreateAPIView):
-    queryset = Post.objects.all()
-    serializer_class = PostSerializer
+
 # Post List API
-class PostListApi(generics.ListAPIView):
+class PostListApi(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 # Post Update API
-class PostUpdateApi(generics.RetrieveUpdateAPIView):
+class PostUpdateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
-# Post Delete API
-class PostDeleteApi(generics.DestroyAPIView):
-   queryset = Post.objects.all()
-   serializer_class = PostSerializer
-# Post Details API
-class PostDetailsApi(generics.DestroyAPIView):
-   queryset = Post.objects.all()
-   serializer_class = PostSerializer
 
   
 class ProductList(generics.ListCreateAPIView):
