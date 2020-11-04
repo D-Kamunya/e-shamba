@@ -12,6 +12,10 @@ from .models import Post
 
 from .models import Product
 from .serializer import ProductSerializer
+
+
+from .models import Prod_rec
+from .serializer import ProductRecSerializer
 # schedule Create API
 
 class ScheduleAPI(generics.ListCreateAPIView):
@@ -67,12 +71,23 @@ class PostUpdateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
 
-  
+# Product API
 class ProductList(generics.ListCreateAPIView):
   queryset = Product.objects.all()
   serializer_class = ProductSerializer
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Product.objects.all()
-  serializer_class = ProductSerializer  
+  serializer_class = ProductSerializer 
+
+
+# Product Recommendation API
+class RecList(generics.ListCreateAPIView):
+  queryset = Prod_rec.objects.all()
+  serializer_class = ProductRecSerializer
+
+class RecDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Prod_rec.objects.all()
+  serializer_class = ProductRecSerializer 
+
 
