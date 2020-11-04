@@ -19,6 +19,9 @@ from .serializer import ProductRecSerializer
 
 from .models import Crop_prd
 from .serializer import CropPrdSerializer
+
+from .models import Post_Comment
+from .serializer import PostCommentSerializer
 # schedule Create API
 
 class ScheduleAPI(generics.ListCreateAPIView):
@@ -102,5 +105,16 @@ class CropPrdList(generics.ListCreateAPIView):
 class CropPrdDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Crop_prd.objects.all()
   serializer_class = CropPrdSerializer
+
+
+
+#Post comment API
+class PostCommentList(generics.ListCreateAPIView):
+  queryset = Post_Comment.objects.all()
+  serializer_class = PostCommentSerializer
+
+class PostCommentDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Post_Comment.objects.all()
+  serializer_class = PostCommentSerializer
 
 
