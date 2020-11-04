@@ -22,6 +22,9 @@ from .serializer import CropPrdSerializer
 
 from .models import Post_Comment
 from .serializer import PostCommentSerializer
+
+from .models import Crop_activity
+from .serializer import CropActivitySerializer
 # schedule Create API
 
 class ScheduleAPI(generics.ListCreateAPIView):
@@ -116,5 +119,17 @@ class PostCommentList(generics.ListCreateAPIView):
 class PostCommentDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Post_Comment.objects.all()
   serializer_class = PostCommentSerializer
+
+
+
+
+#Crop Activity  API
+class CropActivityList(generics.ListCreateAPIView):
+  queryset = Crop_activity.objects.all()
+  serializer_class = CropActivitySerializer
+
+class CropActivityDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Crop_activity.objects.all()
+  serializer_class = CropActivitySerializer 
 
 

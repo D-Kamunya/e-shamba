@@ -1,5 +1,5 @@
 from rest_framework import  serializers
-from .models import Schedule,Crop,Post,Product,Prod_rec,Crop_prd,Post_Comment
+from .models import Schedule,Crop,Post,Product,Prod_rec,Crop_prd,Post_Comment,Crop_activity
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -50,6 +50,13 @@ class PostCommentSerializer(serializers.ModelSerializer):
     class Meta:
       fields = '__all__'
       model = Post_Comment
+
+
+
+class CropActivitySerializer(serializers.ModelSerializer):
+    class Meta:
+      fields = '__all__'
+      model = Crop_activity
 
 
   
