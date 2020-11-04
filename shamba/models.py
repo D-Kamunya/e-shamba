@@ -54,6 +54,7 @@ class Crop(models.Model):
     upload_date = models.DateTimeField(auto_now_add=True)
     
 
+
     def __str__(self):
         return self.name
 
@@ -122,6 +123,15 @@ class Schedule(models.Model):
     details = models.TextField()
     schedule_date = models.DateTimeField()
 
+
+   
+
     def __str__(self):
         return self.id
 
+
+    
+
+   
+
+  
