@@ -1,9 +1,8 @@
 from django.conf.urls import url
 from django.urls import path, include
-#from .api import CropCreateApi,CropApi,CropUpdateApi,CropDeleteApi
+from .api import ProductList, ProductDetail
 urlpatterns = [
-    # path('api/crops',CropApi.as_view()),
-    # path('api/crop/create',CropCreateApi.as_view()),
-    # path('api/crop/<int:pk>/update',CropUpdateApi.as_view()),
-    # path('api/crop/<int:pk>/delete',CropDeleteApi.as_view()),
+    path('api/product',ProductList.as_view()),
+    path('api/product/<int:pk>',ProductDetail.as_view()),
+  
 ]
