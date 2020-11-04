@@ -47,11 +47,12 @@ class Crop(models.Model):
     """
     Crop class to define crop Objects
     """
-    
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     name = models.CharField(max_length =150)
     photo = ImageField(blank=True, manual_crop="")
     details = models.TextField()
     upload_date = models.DateTimeField(auto_now_add=True)
+    
 
     def __str__(self):
         return self.name
