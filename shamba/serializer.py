@@ -2,6 +2,7 @@ from rest_framework import  serializers
 from .models import Schedule
 from .models import Crop
 from .models import Post
+from .models import Product
 from django.contrib.auth.models import User
 
 class UserSerializer(serializers.ModelSerializer):
@@ -26,7 +27,10 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post  
   
-  
-  
+
+class ProductSerializer(serializers.ModelSerializer):
+    class Meta:
+      fields = ('id','name', 'photo', 'category', 'price', 'crops', 'upload_date')
+      model = Product  
   
 

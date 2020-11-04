@@ -1,5 +1,6 @@
 from rest_framework.response import Response
 from rest_framework import generics,permissions
+
 from .serializer import CropSerializer
 from .models import Crop
 
@@ -8,6 +9,9 @@ from .models import Schedule
 
 from .serializer import PostSerializer
 from .models import Post
+
+from .models import Product
+from .serializer import ProductSerializer
 # schedule Create API
 
 class ScheduleAPI(generics.ListAPIView):
@@ -94,4 +98,13 @@ class PostDeleteApi(generics.DestroyAPIView):
 class PostDetailsApi(generics.DestroyAPIView):
    queryset = Post.objects.all()
    serializer_class = PostSerializer
+
+  
+class ProductList(generics.ListCreateAPIView):
+  queryset = Product.objects.all()
+  serializer_class = ProductSerializer
+
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Product.objects.all()
+  serializer_class = ProductSerializer  
 
