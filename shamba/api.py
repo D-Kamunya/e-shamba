@@ -16,6 +16,9 @@ from .serializer import ProductSerializer
 
 from .models import Prod_rec
 from .serializer import ProductRecSerializer
+
+from .models import Crop_prd
+from .serializer import CropPrdSerializer
 # schedule Create API
 
 class ScheduleAPI(generics.ListCreateAPIView):
@@ -89,5 +92,15 @@ class RecList(generics.ListCreateAPIView):
 class RecDetail(generics.RetrieveUpdateDestroyAPIView):
   queryset = Prod_rec.objects.all()
   serializer_class = ProductRecSerializer 
+
+
+# Crop Product API
+class CropPrdList(generics.ListCreateAPIView):
+  queryset = Crop_prd.objects.all()
+  serializer_class = CropPrdSerializer
+
+class CropPrdDetail(generics.RetrieveUpdateDestroyAPIView):
+  queryset = Crop_prd.objects.all()
+  serializer_class = CropPrdSerializer
 
 

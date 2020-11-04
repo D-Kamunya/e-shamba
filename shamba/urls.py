@@ -1,5 +1,5 @@
 from django.urls import path
-from .api import CropApi,CropDetailApi,UsersCropListApi,ScheduleUpdateApi,ScheduleAPI,PostListApi,PostUpdateApi,ProductList, ProductDetail,RecList,RecDetail
+from .api import CropApi,CropDetailApi,UsersCropListApi,ScheduleUpdateApi,ScheduleAPI,PostListApi,PostUpdateApi,ProductList, ProductDetail,RecList,RecDetail,CropPrdList,CropPrdDetail
 
 
 urlpatterns = [
@@ -14,5 +14,7 @@ urlpatterns = [
     path('api/product/<int:pk>',ProductDetail.as_view()),
     path('api/product_recommendations',RecList.as_view()),
     path('api/product_recommendations/<int:pk>',RecDetail.as_view()),
+    path('api/crop_product', CropPrdList.as_view()),
+    path('api/crop_product/<int:pk>',CropPrdDetail.as_view()),
 ]
 
