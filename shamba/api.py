@@ -38,7 +38,20 @@ class ScheduleUpdateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Schedule.objects.all()
     serializer_class = ScheduleSerializer
 
+class UserScheduleListApi(generics.ListAPIView):
+    
+    serializer_class = ScheduleSerializer
 
+    def get_queryset(self):
+        """
+        This view should return a list of all the crops
+        for the user.
+        """
+        queryset = Schedule.objects.all()
+        userid = self.request.query_params.get('userid', None)
+        if userid is not None:
+            queryset = queryset.filter(user_id=userid)
+        return queryset 
 
 # Crop List API
 class CropApi(generics.ListCreateAPIView):
@@ -75,6 +88,7 @@ class UsersCropListApi(generics.ListAPIView):
 class PostListApi(generics.ListCreateAPIView):
     queryset = Post.objects.all()
     serializer_class = PostSerializer
+    
 # Post Update API
 class PostUpdateApi(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.all()

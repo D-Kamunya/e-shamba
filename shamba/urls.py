@@ -1,10 +1,10 @@
 from django.urls import path
-from .api import CropApi,CropDetailApi,UsersCropListApi,ScheduleUpdateApi,ScheduleAPI,PostListApi,PostUpdateApi,ProductList, ProductDetail,RecList,RecDetail,CropPrdList,CropPrdDetail,PostCommentList,PostCommentDetail,CropActivityList,CropActivityDetail
-
+from .api import CropApi,CropDetailApi,UsersCropListApi,ScheduleUpdateApi,ScheduleAPI,PostListApi,PostUpdateApi,ProductList, ProductDetail,RecList,RecDetail,CropPrdList,CropPrdDetail,PostCommentList,PostCommentDetail,CropActivityList,CropActivityDetail,UserScheduleListApi
 
 urlpatterns = [
     path('api/schedule',ScheduleAPI.as_view()),
     path('api/schedule/<int:pk>',ScheduleUpdateApi.as_view()),
+    path('api/schedule/user/<int:pk>',UserScheduleListApi.as_view()),
     path('api/crop',CropApi.as_view()),
     path('api/crop/<int:pk>',CropDetailApi.as_view()),
     path('api/crops/user/<int:pk>',UsersCropListApi.as_view()),

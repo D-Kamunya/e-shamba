@@ -8,7 +8,7 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ('id','first_name', 'last_name', 'username', 'email')        
 
 class ScheduleSerializer(serializers.ModelSerializer):
-    user = UserSerializer(many=False) 
+   
     class Meta:
         model = Schedule
         fields = '__all__'
