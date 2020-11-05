@@ -1,4 +1,6 @@
-virtual/
+.venv/
 start.sh
 *.pyc
 .env
+Pipfile
+virtual/
