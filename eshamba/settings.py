@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 from pathlib import Path
 import os
 from decouple import config,Csv
-
+import datetime
 
 
 # Email configurations remember to install python-decouple
@@ -68,6 +68,8 @@ MIDDLEWARE = [
 ALLOWED_HOSTS=['*']
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+
 
 ROOT_URLCONF = 'eshamba.urls'
 
