@@ -15,7 +15,6 @@ class ScheduleSerializer(serializers.ModelSerializer):
 
 
 class CropSerializer(serializers.ModelSerializer):
-    user = UserSerializer(many=False)
     class Meta:
         model = Crop
         fields = '__all__'
